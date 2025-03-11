@@ -28,26 +28,13 @@ function View() {
         fetchSalaries();
     }, [id]);
 
-    const filterSalaries = (e) => {
-        const query = e.target.value.toLowerCase();
-        const filteredRecords = salaries.filter((salary) =>
-            salary.employeeId?.employeeId?.toLowerCase().includes(query)
-        );
-        setFilteredSalaries(filteredRecords);
-    };
+    
 
     return (
         <>
             <div className="p-2">
                 <h2 className="text-center mb-4">Salary History</h2>
-                <div className="d-flex justify-content-between align-items-center mb-3">
-                    <input
-                        type="text"
-                        className="form-control w-50"
-                        placeholder="🔍 Search By Emp ID"
-                        onChange={filterSalaries}
-                    />
-                </div>
+                
                 <table className="table table-bordered text-center">
                     <thead className="thead-light">
                         <tr>

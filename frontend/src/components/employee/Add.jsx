@@ -38,7 +38,7 @@ function Add(){
         })
 
         for (let pair of formDataObj.entries()) {
-            console.log(pair[0], pair[1]);  // Log each key-value pair
+            console.log(pair[0], pair[1]);  
         }
         
         try {
@@ -143,7 +143,6 @@ function Add(){
                             <label className="form-label">Role</label>
                             <select className="form-select" name="role" onChange={handleChange} required>
                                 <option value="">Select Role</option>
-                                <option value="Admin">Admin</option>
                                 <option value="Employee">Employee</option>
                             </select>
                         </div>

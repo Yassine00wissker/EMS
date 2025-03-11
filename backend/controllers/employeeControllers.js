@@ -4,7 +4,7 @@ import bcrypt from "bcrypt";
 import multer from "multer";
 import path from "path";
 import Department from "../models/Department.js"
-// ✅ Define multer storage
+
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, "public/uploads");
@@ -14,7 +14,7 @@ const storage = multer.diskStorage({
     },
 });
 
-// ✅ Initialize multer
+
 const upload = multer({
     storage,
     limits: {
@@ -50,27 +50,25 @@ const addEmployee = async (req, res) => {
             return res.status(400).json({ success: false, error: "All fields are required" });
         }
 
-        // ✅ Check if user already exists
         const user = await User.findOne({ email });
         if (user) {
             return res.status(400).json({ success: false, error: "User already registered" });
         }
 
-        // ✅ Hash the password
         const hashPassword = await bcrypt.hash(password, 10);
 
-        // ✅ Create user
+     
         const newUser = new User({
             name,
             email,
             password: hashPassword,
             role,
-            profileImage: req.file ? req.file.filename : "", // ✅ Check if file exists
+            profileImage: req.file ? req.file.filename : "", 
         });
 
         const savedUser = await newUser.save();
 
-        // ✅ Create employee record
+       
         const newEmployee = new Employee({
             userId: savedUser._id,
             employeeId,

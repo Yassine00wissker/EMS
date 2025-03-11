@@ -21,7 +21,7 @@ function List() {
                 if (response.data.success) {
                     let sno = 1;
                     const data = response.data.employees
-                        .filter((emp) => emp.department && emp.userId) // ✅ Skip employees with missing department or userId
+                        .filter((emp) => emp.department && emp.userId) 
                         .map((emp) => ({
                             _id: emp._id,
                             sno: sno++,
