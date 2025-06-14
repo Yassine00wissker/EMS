@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useAuth } from "../context/authContext";
 import { useNavigate } from "react-router-dom";
-import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import eye icons
+import { FaEye, FaEyeSlash } from "react-icons/fa"; 
 
 function Login() {
     const [email, setEmail] = useState("");
