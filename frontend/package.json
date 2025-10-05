@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^1.7.9",
     "bootstrap": "^5.3.3",
+    "projet_de_stage": "file:..",
     "react": "^18.3.1",
     "react-data-table-component": "^7.6.2",
     "react-dom": "^18.3.1",
